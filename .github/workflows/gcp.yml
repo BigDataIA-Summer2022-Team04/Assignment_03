@@ -8,7 +8,7 @@ jobs:
     name: Build and Push to GCP
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: damg7245-assignment03-MaaS
+      IMAGE_NAME: damg7245-assignment03-maas
       PROJECT_ID: plane-detection-352701
     steps:
     - name: Checkout
