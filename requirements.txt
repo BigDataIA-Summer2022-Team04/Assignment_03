@@ -12,3 +12,4 @@ python-jose
 bcrypt
 python-multipart
 Pillow
+tensorflow
