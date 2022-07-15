@@ -1,0 +1,37 @@
+---
+name: Build and Push Docker Image to Google Cloud Platform
+on:
+  push:
+    branches: [ deploy-api ]
+jobs:
+  build-push-gcr:
+    name: Build and Push to GCP
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: damg7245-assignment03-MaaS
+      PROJECT_ID: plane-detection-352701
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - uses: google-github-actions/setup-gcloud@v0
+      with:
+        service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+        project_id: ${{ env.PROJECT_ID }}
+        export_default_credentials: true
+
+    - name: Build Docker Image
+      run: docker build -t $IMAGE_NAME:latest .
+
+    - name: Configure Docker Client
+      run: |-
+        gcloud auth configure-docker --quiet
+
+    - name: Push Docker Image to Container Registry (GCR)
+      env:
+        GIT_TAG: v0.1.0
+      run: |-
+        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG

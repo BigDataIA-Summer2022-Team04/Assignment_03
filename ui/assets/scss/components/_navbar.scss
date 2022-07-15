@@ -1,0 +1,64 @@
+/* Page Navbar*/
+nav.page-navbar {
+	min-height: 70px;
+	padding: 0 30px;
+	background-color: rgba($gray-800, .2);
+	@include custom-transition(all,.3s,0s);
+
+	.navbar-brand {
+		font-size: 20px;
+		@include custom-transition(all, .3s, 0s);
+
+		.text-dark {
+			color: $white !important;
+		}
+	}
+
+	.nav-item {
+
+		.nav-link {
+			color: $gray-300;
+			font-weight: 400;
+			&.active {
+				color: $primary;		
+			}				
+		}
+
+		.btn {
+			color: $gray-900 !important;
+		}	
+	}
+
+	@include media-breakpoint-down(sm) {
+		.navbar-collapse {
+			height: 0;
+			overflow: hidden;
+			opacity: 0;
+			@include custom-transition(all, .3s, 0s);
+		}
+
+		.navbar-collapse.show {
+			height: auto;
+			opacity: 1;
+		}
+	}
+	&.affix {
+		min-height: 75px;
+		padding: 0 20px;
+		background: $white;
+		box-shadow: 0 2px 24px rgba($gray-500, .4);
+		color: $gray-800;
+			
+		.nav-link {
+			color: $gray-800;
+		}
+
+		.navbar-brand {
+			font-size: 24px;
+
+			.text-dark {
+				color: $black !important;
+			}
+		}
+	}	
+}
