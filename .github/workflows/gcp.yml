@@ -2,7 +2,7 @@
 name: Build and Push Docker Image to Google Cloud Platform
 on:
   push:
-    branches: [ deploy-api ]
+    branches: [ deploy-streamlit ]
 jobs:
   build-push-gcr:
     name: Build and Push to GCP
