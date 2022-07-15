@@ -76,7 +76,7 @@ if st.session_state['if_logged'] == True:
 
         with col2:
             st.subheader("Download Sample Images")
-            with open("/Users/piyush/Sandbox/Streamlit_03/dataset/mini_sample.zip", "rb") as fp:
+            with open("dataset/mini_sample.zip", "rb") as fp:
                 st.download_button(
                     label="Download",
                     data = fp,
@@ -121,12 +121,15 @@ if st.session_state['if_logged'] == True:
                         # st.json(response.text)
                         # json_data["confidence"] = 35.00
                         if float(json_data["confidence"]) >= 75.00:
+                            if json_data["prediction"] == "Not Defective" : st.balloons() 
                             st.metric("This part is :", json_data["prediction"] , delta=f"with confidence {json_data['confidence']} %", delta_color="normal")
                         elif float(json_data["confidence"]) >= 25.00:
+                            if json_data["prediction"] == "Not Defective" : st.balloons() 
                             st.metric("This par is :", json_data["prediction"] , delta=json_data["confidence"], delta_color="off")
                         else:
+                            if json_data["prediction"] == "Not Defective" : st.balloons() 
                             st.metric("This par is :", json_data["prediction"] , delta=json_data["confidence"], delta_color="inverse")
-                        st.balloons()
+                        # st.balloons()
                         st.success('Done !')
                     elif response.status_code == 400:
                         st.error('Pass a correct file')
