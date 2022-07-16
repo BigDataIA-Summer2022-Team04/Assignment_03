@@ -18,7 +18,7 @@ router = APIRouter(
     tags=['Prediction']
 )
 
-model_cutmix = tf.keras.models.load_model("models/cutmix/cutmix.h5")
+model_cutmix = tf.keras.models.load_model("models/cutmix")
 model_mixup = tf.keras.models.load_model("models/mixup")
 model_augmix = tf.keras.models.load_model("models/augmix")
 class_name = ["Defective", "Not Defective"]
@@ -37,10 +37,11 @@ async def get_registrant( model_name: str, file: UploadFile = File(...),
         try:
             with open("image.jpeg", 'wb') as img_file:
                 img_file.write(contents)
-            image = np.array(tf.keras.utils.load_img("image.jpeg",target_size=(300, 300),color_mode='rgb'))
+            image = np.array(tf.keras.utils.load_img("image.jpeg",target_size=(32, 32),color_mode='rgb'))
             os.remove("image.jpeg")
-            image = image.astype("float32") / 255.0
-            img_batch = np.reshape(image, (-1, 300, 300, 3))
+            image = tf.image.resize(image, (32, 32))
+            image = np.reshape(image, (-1, 32, 32, 3))
+            img_batch = tf.image.convert_image_dtype(image, tf.float32) / 255.0
             predictions = model_cutmix.predict(img_batch)
         except Exception as e:
             logging.error(f"Error reading image \n {e}")
