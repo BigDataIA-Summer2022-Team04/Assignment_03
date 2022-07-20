@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="MaaS as a service assignment 03">
+      <meta name="author" content="Piyush">
+      <title>Defect Prediction</title>
+      <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.png">
+      <!-- font icons -->
+      <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+      <!-- Bootstrap + Creative Design main styles -->
+      <link rel="stylesheet" href="assets/css/creative-design.css">
+   </head>
+   <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+      <!-- Page Navbar -->
+      <nav id="scrollspy" class="navbar page-navbar navbar-light navbar-expand-md fixed-top" data-spy="affix" data-offset-top="20">
+         <div class="container">
+            <a class="navbar-brand" href="#"><strong class="text-primary">Model</strong> <span class="text-dark">as Service</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about">Background</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#features">Data Augmentation</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#testmonial">Try</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link" href="#contact">Contact</a>
+                     </li> -->
+                  <li class="nav-item ml-md-4">
+                     <a class="nav-link btn btn-primary" href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03" target="_blank">Leave a ⭐️</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- End of Page Navbar -->   
+      <!-- Page Header -->
+      <header id="home" class="header">
+         <div class="overlay"></div>
+         <div class="header-content">
+            <!-- <div class="typed-text">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div> -->
+            <h6>Welcome</h6>
+            <h5>Detect Manufacturing Defect Using Image Recognition </h5>
+         </div>
+      </header>
+      <!-- End of Page Header -->    
+      <!-- About Section -->
+      <section id="about">
+         <!-- Container -->
+         <div class="container">
+            <!-- About wrapper -->
+            <div class="about-wrapper">
+               <div class="after">
+                  <h1></h1>
+               </div>
+               <div class="content">
+                  <h2 class="mb-3">Background</h2>
+                  <!-- row -->
+                  <div class="row">
+                     <div class="col">
+                        <ul>
+                           <li>
+                              <h6>
+                                 Use the <a href="https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product">casting product image data for quality inspection</a> dataset from Kaggle to build a Model-as-a-Service (MaaS) application.
+                              </h6
+                                 >
+                           </li>
+                           <li>
+                              <h6>
+                                 Build a Convolutional Neural Network (ConvNet/CNN) and implement Data Augmentation such as Cutmix, Mixup and Augmix.
+                              </h6
+                                 >
+                           </li>
+                           <h6>
+                           <li>Deploy ML Models as API using FastAPI</li> </h6>
+                           <h6><li>Build a Streamlit application for end users to interact with the Model</li> </h6>
+                        </ul>
+                        <!-- <p>Build the ML Model</p>
+                           <p><b>Adipisicing elit. Modi similique  iusto voluptatibus sint.</b></p>                        
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dignissimos modi molestias voluptas possimus perferendis saepe soluta accusantium, obcaecati neque quas ducimus, alias labore nesciunt atque ab voluptatibus quis! Molestiae dicta reprehenderit, quod laborum voluptatem laboriosam! Sapiente vel, fugiat voluptates.</p>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quis!</p> -->
+                     </div>
+                     <!-- <div class="col">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda soluta nisi cumque nostrum porro repellat iusto neque quos asperiores, aliquam.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quis!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dignissimos modi molestias voluptas possimus perferendis saepe soluta accusantium, obcaecati neque quas ducimus, alias labore nesciunt atque ab voluptatibus quis! Molestiae dicta reprehenderit, quod laborum voluptatem laboriosam! Sapiente vel, fugiat voluptates.</p>
+                        </div> -->
+                  </div>
+                  <!-- End of Row -->                   
+                  <!-- <a href="javascript:void(0)">Read More...</a> -->
+               </div>
+            </div>
+            <!-- End of About Wrapper -->         
+         </div>
+         <!-- End of Container-->        
+      </section>
+      <!--End of Section -->
+      <section id="features">
+         <!-- section -->
+         <section>
+            <!-- Container -->
+            <div class="container">
+               <h2 class="text-center pb-2">Data Augmentation Techniques</h2>
+               <h6 class="text-center pb-2">Data Augmentation: a technique to increase the diversity of your training set by applying random (but realistic) transformations, such as image rotation.</h6>
+               <!-- row -->
+               <div class="row justify-content-between align-items-center">
+                  <div class="col-md-6">
+                     <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="assets/imgs/img-1.jpg" class="w-100" alt="About Us">
+                     </div>
+                  </div>
+                  <div class="col-md-5">
+                     <h6 class="title mb-3">Cutmix</h6>
+                     <p>CutMix is a data augmentation technique that addresses the issue of information loss and inefficiency present in regional dropout strategies. Instead of removing pixels and filling them with black or grey pixels or Gaussian noise, you replace the removed regions with a patch from another image, while the ground truth labels are mixed proportionally to the number of pixels of combined images.</p>
+                     <p class="text-muted">CutMix was proposed in CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features (Yun et al., 2019)</p>
+
+                     <p class="font-weight-bold">Model Accuracy of 81%</p>
+                     <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/cutmix.ipynb" target="_blank" >Notebook</a></button>
+                     <!-- <button type="button"><a href="yourlink.com">Link link</a></button> -->
+                  </div>
+               </div>
+               <!-- End of Row -->
+            </div>
+            <!-- End of Container -->
+         </section>
+         <!-- End of Section -->   
+         <!-- section -->
+         <section>
+            <!-- Container -->
+            <div class="container">
+               <!-- Row -->
+               <div class="row justify-content-between align-items-center">
+                  <div class="col-md-5">
+                     <h6 class="title mb-3">Mixup</h6>
+                     <p>The technique is quite systematically named - we are literally mixing up the features and their corresponding labels. Implementation-wise it's simple. Neural networks are prone to memorizing corrupt labels. mixup relaxes this by combining different features with one another (same happens for the labels too) so that a network does not get overconfident about the relationship between the features and their labels. </p>
+                     <p>Mixup is specifically useful when we are not sure about selecting a set of augmentation transforms for a given dataset, medical imaging datasets, for example. mixup can be extended to a variety of data modalities such as computer vision, natural language processing, speech, and so on.</p>
+                     <p class="text-muted">mixup is a domain-agnostic data augmentation technique proposed in mixup: Beyond Empirical Risk Minimization by Zhang et al.</p>
+                     <!-- <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                        -->
+                        <p class="font-weight-bold">Model Accuracy of 89%</p>
+                        <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/mixup.ipynb" target="_blank" >Notebook</a></button>
+                        <!-- <button type="button"><a href="yourlink.com">Link link</a></button> -->
+                  </div>
+                  <div class="col-md-6">
+                     <div class="img-wrapper">
+                        <div class="after right"></div>
+                        <img src="assets/imgs/img-2.jpg" class="w-100" alt="About Us">
+                     </div>
+                  </div>
+               </div>
+               <!-- End of Row -->           
+            </div>
+            <!-- End of Container-->      
+         </section>
+         <!-- End of Section -->
+         <!-- Features Section -->
+         <!-- <section class="has-bg-img" id="features">
+            <div class="overlay"></div>
+            <a data-toggle="modal" href="#exampleModalCenter">
+                <i></i>
+            </a>
+            
+            
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                         <iframe width="100%" height="450px" class="border-0" 
+                        src="https://www.youtube.com/embed/tgbNyZ7vqY?controls=0">
+                        </iframe>
+                    </div>
+                </div>
+            </div>   
+            </section> -->
+         <!-- End of features Section -->  
+         <!-- Section -->
+         <section>
+            <!-- Container -->
+            <div class="container">
+               <!-- Row -->
+               <div class="row justify-content-between align-items-center">
+                  <div class="col-md-6">
+                     <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="assets/imgs/img-4.jpg" class="w-100" alt="About us">
+                     </div>
+                  </div>
+                  <div class="col-md-5">
+                     <h6 class="title mb-3">Augmix</h6>
+                     <p>AugMix, a data processing technique that mixes augmented images and enforces consistent embeddings of the augmented images, which results in increased robustness and improved uncertainty calibration. AugMix does not require tuning to work correctly, as with random cropping or CutOut, and thus enables plug-and-play data augmentation. AugMix significantly improves robustness and uncertainty measures on challenging image classification benchmarks, closing the gap between previous methods and the best possible performance by more than half in some cases. With AugMix, we obtain state-of-the-art on ImageNet-C, ImageNet-P and in uncertainty estimation when the train and test distribution do not match</p>
+                     <p class="text-muted">AugMix technique proposed: A Simple Data Processing Method to Improve Robustness and Uncertainty by Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji.</p>
+                     <p class="font-weight-bold">Model Accuracy of __%</p>
+                        <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/augmix.ipynb" target="_blank" >Notebook</a></button>
+                     <!-- <button class="btn btn-outline-primary btn-sm">Learn More</button> -->
+                  </div>
+               </div>
+               <!-- End of Row -->           
+            </div>
+            <!-- End of Container-->      
+         </section>
+         <!-- End of Section -->   
+      </section>
+      <!-- Testmonial Section -->
+      <section class="text-center pt-5" id="testmonial">
+         <!-- Container -->
+         <div class="container">
+            <h3 class="mt-3 mb-5 pb-5">Try It Out</h3>
+            <!-- Row -->
+            <div class="row">
+               <div class="col-sm-10 col-md-4 m-auto">
+                  <div class="testmonial-wrapper">
+                     <img src="assets/imgs/avatar3.jpg" alt="Request Access">
+                     <h6 class="title mb-3">Request Access</h6>
+                     <p>Fill up this form to request access.</p>
+                     <!-- <button class="btn btn-link btn-outline-dark"><a href="https://arxiv.org/abs/1912.02781" target="_blank" >Fill Now</a></button> -->
+                     <button class="btn btn-dark" type="button"><a href="https://forms.office.com/r/Hg6LfjhrXc" target="_blank" >Register</a></button>
+                  </div>
+               </div>
+               <div class="col-sm-10 col-md-4 m-auto">
+                  <div class="testmonial-wrapper">
+                     <img src="assets/imgs/avatar1.jpg" alt="Client Image">
+                     <h6 class="title mb-3">API Documentation</h6>
+                     <p>Public API User Documentation.</p>
+                     <button class="btn btn-dark" type="button"><a href="https://maasapi.anandpiyush.com/docs" target="_blank" >Visit</a></button>
+                     <!-- <button class="btn btn-danger" ><a href="https://maasapi.anandpiyush.com/docs" target="_blank" >Visit</a></button> -->
+                  </div>
+               </div>
+               <div class="col-sm-10 col-md-4 m-auto">
+                  <div class="testmonial-wrapper">
+                     <img src="assets/imgs/avatar2.jpg" alt="Client Image">
+                     <h6 class="title mb-3">Web App</h6>
+                     <p>Try it out, Go ahead and upload an image.</p>
+                     <!-- <button class="btn btn-outline-dark">Visit</button> -->
+                     <button class="btn btn-dark" type="button"><a href="https://qachecker.anandpiyush.com/" target="_blank" >Visit</a></button>
+                     <!-- <button class="btn btn-link btn-outline-dark" type="button"><a href="https://qachecker.anandpiyush.com" target="_blank">Visit</a></button> -->
+                     <!-- <button class="btn btn-link btn-outline-dark"><a href="https://qachecker.anandpiyush.com" target="_blank" >Visit</a></button> -->
+                  </div>
+               </div>
+            </div>
+            <!-- end of Row -->           
+         </div>
+         <!-- End of Cotanier -->  
+      </section>
+      <!-- End of Testmonial Section -->
+      <!-- Section -->
+      <section class="pb-0">
+         <!-- Container -->
+         <div class="container">
+            <!-- Pre footer -->
+            <div class="pre-footer">
+               <ul class="list">
+                  <li class="list-head">
+                     <h6 class="font-weight-bold">ABOUT ME</h6>
+                  </li>
+                  <li class="list-body">
+                     <p>I am grad student at Northeastern learning to build impactful software application</p>
+                     <a href="#"><strong class="text-primary">Model</strong> <span class="text-dark">as Service</span></a>
+                  </li>
+               </ul>
+               <ul class="list">
+                  <li class="list-head">
+                     <h6 class="font-weight-bold">USEFUL LINKS</h6>
+                  </li>
+                  <li class="list-body">
+                     <div class="row">
+                        <div class="col">
+                           <a href="https://maasapi.anandpiyush.com/docs" target="_blank">API Doc</a>
+                           <a href="https://qachecker.anandpiyush.com/" target="_blank">Streamlit</a>
+                           <a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03" target="_blank">GitHub</a>
+                           <!-- <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                              <a href="#">Link 4</a> -->
+                        </div>
+                        <!-- <div class="col">
+                           <a href="#">Link 5</a>
+                           <a href="#">Link 6</a>
+                           <a href="#">Link 7</a>
+                           <a href="#">Link 8</a>
+                           </div> -->
+                     </div>
+                  </li>
+               </ul>
+               <ul class="list">
+                  <li class="list-head">
+                     <h6 class="font-weight-bold">CONTACT INFO</h6>
+                  </li>
+                  <li class="list-body">
+                     <p>Contact me for an issue or suggestion</p>
+                     <p><i class="ti-location-pin"></i>Boston, MA</p>
+                     <p><i class="ti-email"></i>anand.pi@northeastern.edu</p>
+                     <!-- <div class="social-links">
+                        <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                        <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                        <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                        <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                        <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                        <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+                        </div> -->
+                  </li>
+               </ul>
+            </div>
+            <!-- End of Pre footer -->            
+            <!-- foooter -->
+            <footer class="footer">
+               <p>
+                  Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="https://piyushanand.carrd.co/">Piyush</a>
+               </p>
+            </footer>
+            <!-- End of Footer-->  
+         </div>
+         <!--End of Container -->      
+      </section>
+      <!-- End of Section -->
+      <!-- core  -->
+      <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+      <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+      <!-- bootstrap affix -->
+      <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+      <!-- Creative Design js -->
+      <script src="assets/js/creative-design.js"></script>
+   </body>
+</html>

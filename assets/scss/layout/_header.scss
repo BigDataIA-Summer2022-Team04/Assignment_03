@@ -1,0 +1,63 @@
+.header {
+    background: #efefef url(../imgs/header.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    position: relative;
+    height: 598px;
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($black, .4);
+    }
+
+    .header-content {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align:‌ center;
+        color: $white;
+
+        p {
+            color: white;
+            opacity: 1;
+            margin-bottom: 5px;
+            font-size: calc(12px + (16 - 14) * ((100vw - 300px) / (1200 - 300)));
+
+        }
+
+        h6 {
+            margin-bottom: 25px;
+            font-size: calc(35px + (60 - 35) * ((100vw - 300px) / (1200 - 300)));
+
+        }
+
+    }
+    
+    &-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        opacity: .8;
+    }
+
+    // header mini
+    &-mini {
+        min-height: 24rem;
+        height: 24rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        background: lighten($primary, 25%) !important;
+    }
+}
