@@ -1,4 +1,5 @@
 streamlit
 watchdog
-
+google-cloud-storage
+seaborn
 
