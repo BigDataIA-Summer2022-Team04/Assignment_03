@@ -85,7 +85,7 @@ if st.session_state['if_logged'] == True:
 
             with col2:
                 st.subheader("Download Sample Images")
-                with open("/Users/piyush/Sandbox/Streamlit_03/dataset/mini_sample.zip", "rb") as fp:
+                with open("dataset/mini_sample.zip", "rb") as fp:
                     st.download_button(
                         label="Download",
                         data = fp,
