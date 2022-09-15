@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  fastapi:
+    image: testing
+    container_name: maas_fastapi
+    ports:
+      - 8000:8000
+    networks:
+      - appnet
+    restart: always
+  
+  streamlit:
+    image: test_s
+    container_name: maas_streamlit
+    ports:
+      - 8078:8078
+    environment:
+      API_URL: 'http://maas_fastapi:8000' # TODO: Change API URL
+    networks:
+      - appnet
+    restart: always
+    
+networks:
+  appnet:
