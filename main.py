@@ -5,15 +5,16 @@ import json
 from PIL import Image
 import random
 import numpy as np
-from google.cloud import storage
-import seaborn as sns
-import matplotlib.pyplot as plt
+# from google.cloud import storage
+# import seaborn as sns
+# import matplotlib.pyplot as plt
 from io import BytesIO
 from google.cloud import storage
 
 
 st.set_page_config(page_title="Defect Detection", page_icon="🔎", layout="wide", initial_sidebar_state="collapsed")
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/keys/airflow-gcp.json"
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/keys/airflow-gcp.json"
+BASE_URL = os.getenv("API_URL", "http://hardcore_rubin:8000")
 if 'if_logged' not in st.session_state:
     st.session_state['if_logged'] = False
     st.session_state['access_token'] = ''
@@ -38,7 +39,7 @@ if st.session_state['if_logged'] == False:
         submit = st.form_submit_button("Submit")
         if submit:
             # TODO: Change URL
-            url = "https://maasapi.anandpiyush.com/login"
+            url = f"{BASE_URL}/login"
             payload={'username': username, 'password': password}
             # payload={'username': "test", 'password': "testpw"}
             response = requests.request("POST", url, data=payload)
@@ -121,7 +122,7 @@ if st.session_state['if_logged'] == True:
                         bytes_data = uploaded_file.getvalue()
                         files={'file': bytes_data}
                         # TODO: Change URL
-                        url = f"https://maasapi.anandpiyush.com/maas/predict?model_name={model_name.lower()}"
+                        url = f"{BASE_URL}/maas/predict?model_name={model_name.lower()}"
                         headers = {}
                         headers['Authorization'] = f"Bearer {st.session_state['access_token']}"
                         response = requests.request("POST", url, headers=headers, files=files)
@@ -145,49 +146,49 @@ if st.session_state['if_logged'] == True:
         
         
     with tab2:    
-        
+        st.warning("Unable to connect to GCP Storage")
 
-        client = storage.Client()
-        log_file = []
+        # client = storage.Client()
+        # log_file = []
         
-        for blob in client.list_blobs('airflow-run-cm'):
-            log_file.append(str(blob).split(',')[1].split('.')[0])
+        # for blob in client.list_blobs('airflow-run-cm'):
+        #     log_file.append(str(blob).split(',')[1].split('.')[0])
             
-        option = st.selectbox(
-        'Select the log date',
-        (log_file))
+        # option = st.selectbox(
+        # 'Select the log date',
+        # (log_file))
         
-        st.write('You selected:', option)
+        # st.write('You selected:', option)
         
-        find_log_btn = st.button("Get Confusion Matrix")
+        # find_log_btn = st.button("Get Confusion Matrix")
         
-        if find_log_btn:
-            with st.spinner('Calculating ...'):
-                st.markdown("**true positive** for correctly predicted event values")
-                st.markdown("**false positive** for incorrectly predicted event values")
-                st.markdown("**true negative** for correctly predicted no-event values")
-                st.markdown("**false negative** for incorrectly predicted no-event values.")
+        # if find_log_btn:
+        #     with st.spinner('Calculating ...'):
+        #         st.markdown("**true positive** for correctly predicted event values")
+        #         st.markdown("**false positive** for incorrectly predicted event values")
+        #         st.markdown("**true negative** for correctly predicted no-event values")
+        #         st.markdown("**false negative** for incorrectly predicted no-event values.")
                 
-                option = option.replace(" ", "")
-                option = option.replace(":", "%3A")
+        #         option = option.replace(" ", "")
+        #         option = option.replace(":", "%3A")
                 
-                URL = f"https://storage.googleapis.com/airflow-run-cm/{option}.npy"
-                try:
-                    response = requests.get(URL)
-                    open("temp.npy", "wb").write(response.content)
-                    loaded = np.load("temp.npy")
-                    fig=plt.figure(figsize=(5,5))
-                    ax= plt.subplot()
-                    sns.heatmap(loaded, annot=True, fmt='g', ax=ax);
-                    ax.set_xlabel('Predicted labels');ax.set_ylabel('True labels'); 
-                    ax.set_title('Confusion Matrix'); 
-                    ax.xaxis.set_ticklabels(['Okay', 'Defect']); ax.yaxis.set_ticklabels(['Okay', 'Defect'])
-                    fig.savefig("figure_name.png")
-                    buf = BytesIO()
-                    image = Image.open('figure_name.png')
-                    st.image(image)
-                except Exception as e:
-                        st.error("Unable to find report, Please select another log")
+        #         URL = f"https://storage.googleapis.com/airflow-run-cm/{option}.npy"
+        #         try:
+        #             response = requests.get(URL)
+        #             open("temp.npy", "wb").write(response.content)
+        #             loaded = np.load("temp.npy")
+        #             fig=plt.figure(figsize=(5,5))
+        #             ax= plt.subplot()
+        #             sns.heatmap(loaded, annot=True, fmt='g', ax=ax);
+        #             ax.set_xlabel('Predicted labels');ax.set_ylabel('True labels'); 
+        #             ax.set_title('Confusion Matrix'); 
+        #             ax.xaxis.set_ticklabels(['Okay', 'Defect']); ax.yaxis.set_ticklabels(['Okay', 'Defect'])
+        #             fig.savefig("figure_name.png")
+        #             buf = BytesIO()
+        #             image = Image.open('figure_name.png')
+        #             st.image(image)
+        #         except Exception as e:
+        #                 st.error("Unable to find report, Please select another log")
 
 
     
