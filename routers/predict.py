@@ -29,7 +29,7 @@ async def get_registrant( model_name: str, file: UploadFile = File(...),
                         get_current_user: schemas.ServiceAccount = Depends(get_current_user)
                         ):
     if model_name.lower() not in ['cutmix', 'mixup', 'augmix']:
-        logfunc(get_current_user.email, "/daas/predict" + model_name.lower(), 400)
+        # logfunc(get_current_user.email, "/daas/predict" + model_name.lower(), 400)
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,detail="Please select one model between cutmix, mixup, augmix" )
     contents = await file.read()
 
@@ -74,7 +74,7 @@ async def get_registrant( model_name: str, file: UploadFile = File(...),
     
     predicted_class = class_name[np.argmax(predictions)]
     confidence = np.max(predictions)
-    logfunc(get_current_user.email, "/daas/predict/" + model_name.lower(), 200)
+    # logfunc(get_current_user.email, "/daas/predict/" + model_name.lower(), 200)
     return {
         'prediction': predicted_class,
         'confidence': "0.00" if math.isnan(confidence) else "{:.2f}".format(float(confidence)*100)

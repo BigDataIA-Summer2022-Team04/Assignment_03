@@ -26,7 +26,7 @@ from fastapi import FastAPI,status,HTTPException
 
 # load_dotenv()
 # DONE: Change path before deployment
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/keys/key.json'
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/keys/key.json'
 # LOGLEVEL = os.environ.get('LOGLEVEL', 'INFO').upper()
 logging.basicConfig(
     format='%(asctime)s %(levelname)-8s %(message)s',
