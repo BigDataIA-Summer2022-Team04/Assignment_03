@@ -2,6 +2,14 @@
 
 > Status ⚠️ : Out of Active Development / Maintenance
 
+## Index
+  - [Abstract 📝](#abstract-)
+  - [Links 📎](#links-)
+  - [Video Demo on YouTube 🎬](#video-demo-on-youtube-)
+  - [Source Code References 💻](#source-code-references-)
+  - [Undertaking 👮🏻‍♂️](#undertaking-️)
+
+
 ## Abstract 📝
 Build a Model As a Service application which would classify images of manufactured product as Defective or Not Defective.
 
